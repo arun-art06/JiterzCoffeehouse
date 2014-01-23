@@ -151,7 +151,9 @@
 	_app = {
 		init: function() {
 			announcementViewModel.load(_appData.getAnnouncements());
-            
+			biriyaniViewModel.load(_appData.getBiriyani());
+			drinksViewModel.load(_appData.getDrinks());
+
             if (window.localStorage.getItem("cards") === null) {
 				localStorage.setItem("cards", _appData.getInitialCards());
 			}
@@ -246,8 +248,8 @@
 		singleCardShow: _app.singleCardShow,
 		singleCardInit: _app.singleCardInit,
 		onAddCardViewShow: _app.onAddCardViewShow,
-		announcementData: _app.announcementData,
-		onStoresShow: _app.storesShow,
-		storesInit: _app.storesInit
+		announcementData: _app.announcementData
+		//onStoresShow: _app.storesShow,
+		//storesInit: _app.storesInit
 	});
 }(jQuery, document));

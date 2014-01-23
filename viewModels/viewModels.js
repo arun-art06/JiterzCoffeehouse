@@ -1,10 +1,12 @@
 (function($, console, doc) {
-	var announcementViewModel,
+    var announcementViewModel,
     	cardsViewModel,
     	AddCardViewModel,
     	CardsViewModelBase,
     	SingleCardViewModel,
-    	RewardsViewModel;
+    	RewardsViewModel,
+	    biriyaniViewModel,
+        drinksViewModel;
         
 	AddCardViewModel = kendo.data.ObservableObject.extend({
 		cardNumber: null,
@@ -229,6 +231,25 @@
 		}
 	});
 
+
+	biriyaniViewModel = kendo.observable({
+	    biriyaniList: [],
+
+	    load: function (biriyaniList) {
+	        var that = this;
+	        that.set("biriyaniList", biriyaniList);
+	    }
+	});
+
+	drinksViewModel = kendo.observable({
+	    drinksList: [],
+
+	    load: function (drinksList) {
+	        var that = this;
+	        that.set("drinksList", drinksList);
+	    }
+	});
+
 	cardsViewModel = kendo.observable({
 		cards : [],
 		_cardNumbers: {},
@@ -274,6 +295,8 @@
 		rewardsViewModel: new RewardsViewModel(),
 		addCardViewModel: new AddCardViewModel(),
 		announcementViewModel: announcementViewModel,
+		biriyaniViewModel: biriyaniViewModel,
+		drinksViewModel: drinksViewModel,
 		cardsViewModel: cardsViewModel
 	});
     

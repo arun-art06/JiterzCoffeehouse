@@ -1,0 +1,19 @@
+<div data-role="view" id="mainItemView" data-style="inset" data-title="Main Items" data-model="biriyaniViewModel">
+    <header data-role="header" data-id="jitterz-default-header">
+        <div data-role="navbar">
+            <a class="nav-button" data-role="backbutton" data-align="left">Back</a>
+            <span data-role="view-title"></span> 
+        </div>
+    </header>
+    <div id="mainItemViewContent" data-role="content">
+        <!-- List of cards -->
+        <ul id="rewordsCardsList" data-role="listview" data-style="inset" data-bind="source: biriyaniList" data-template="mainItemCardsList-template"></ul>
+    </div>
+</div>
+
+<script type="text/x-kendo-template" id="mainItemCardsList-template">   
+		<img class="item-photo" src="#:photo#" />
+		<h3 class="item-title" style="margin-left:90px;">#:name#</h3>
+		<p class="item-info" style="margin-left:90px;">#:amount#</p>
+        <div class="clear"></div>         
+</script>
